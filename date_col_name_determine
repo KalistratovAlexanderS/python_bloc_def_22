@@ -1,0 +1,8 @@
+def date_col_name_determine(row):
+    lemmas=row['имя_колонки_данных']
+    stop_words=['значаение_в_колонке ', \
+                '___________', '__________']
+    for word in stop_words:
+        if word in lemmas: 
+            lemmas=lemmas.replace(word, '')
+    return lemmas
